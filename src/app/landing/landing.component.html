@@ -1,0 +1,50 @@
+
+<!-- Modals -->
+<button nz-button [nzType]="'primary'" (click)="showModal()"><span>Add Candidate</span></button>
+<nz-modal [(nzVisible)]="isVisible" 
+nzTitle="New candidate" 
+(nzOnCancel)="handleCancel()" 
+(nzOnOk)="handleOk()">
+
+    <ng-container *nzModalContent>
+
+<!-- Forms -->
+        <p>Name</p>
+
+        
+        <input nz-input placeholder="First name" [(ngModel)]="newCandidate.firstName" />
+        
+
+        <input nz-input placeholder="Last name" [(ngModel)]="newCandidate.lastName" />
+        <input nz-input placeholder="Email" [(ngModel)]="newCandidate.email" />
+
+        <p>Addresses</p>
+        <input nz-input placeholder="Address 1" [(ngModel)]="newCandidate.addresses.address1" />
+        <input nz-input placeholder="Address 2" [(ngModel)]="newCandidate.addresses.address2" />
+
+
+
+        <input nz-input placeholder="City" [(ngModel)]="newCandidate.city" />
+        <input nz-input placeholder="Province" [(ngModel)]="newCandidate.addresses.province" />
+        <input nz-input placeholder="Country" [(ngModel)]="newCandidate.addresses.country" />
+
+
+        <p>Phone no.</p>
+        <input nz-input placeholder="Number 1" [(ngModel)]="newCandidate.num" />
+    
+
+
+    </ng-container>
+</nz-modal>
+
+
+<!-- Cards -->
+<div class="landing">
+
+    <div class="candidate" [style.background]="candidate.color" *ngFor="let candidate of candidates; let i = index">
+  
+  <app-candidate [candidate]="candidate" [i]="i"></app-candidate>
+  
+  </div>
+    
+  </div>

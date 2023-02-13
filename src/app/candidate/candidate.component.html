@@ -1,0 +1,23 @@
+
+
+
+<nz-card nzTitle="Candidate" [ngStyle]="{backgroundColor:candidate.color}" style="cursor:pointer;">
+    <div class="candidate">
+        <div class="avatar">
+            <img src="assets/bob.png" alt="">
+        </div>
+        <div class="details" >
+            <h1 >{{i+1}} {{candidate.firstName}} {{candidate.lastName}}</h1>
+            <h2 >{{candidate.email}}</h2>
+            <h2 >Address</h2>
+            <div>
+                <p *ngFor="let cands of candidate.addresses">{{cands.address1}} {{cands.address2}} 
+                    {{cands.city}} {{cands.province}}  {{cands.country}} </p>
+            </div>
+            <div *ngFor="let number of candidate.phones" >
+                <h5 >{{number}}</h5>
+            </div>
+        </div>
+    </div>
+
+</nz-card>

@@ -1,0 +1,23 @@
+<button class ="but" (click)="switchVal = !switchVal"> <button mat-button>Vission/Mission</button>
+
+<div *ngIf="switchVal==true; then trueBlock else elseBlock" class="missionvission" style="background-color: rgb(255, 255, 255);"></div>
+<ng-template #trueBlock>
+
+
+
+    <nz-card nzTitle="Vission:">
+        We aim to change the landscape of the outsourcing industry by creating new standards in service delivery, 
+        customer engagement and business ethics.
+
+    </nz-card>
+</ng-template>
+
+
+    <ng-template #elseBlock>
+    <nz-card nzTitle="Mission:">
+        We help businesses maximize their potential by providing cost-effective, scalable workforce solutions built on highly skilled staff, 
+        modern fully equipped workspaces and Cloudstaff custom-built technology to deliver a seamlessly unified global workforce..
+
+    </nz-card>
+
+</ng-template>
